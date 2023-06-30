@@ -18,10 +18,12 @@ def configurar_banco_dados():
 
     tabela_demanda = """
     CREATE TABLE IF NOT EXISTS demanda (
-        id INT PRIMARY KEY AUTO_INCREMENT,
+        id_demanda INT PRIMARY KEY AUTO_INCREMENT,
         titulo VARCHAR(255) NOT NULL,
         proposta_melhoria TEXT,
-        descricao_qualitativo TEXT
+        descricao_qualitativo TEXT,
+        frequencia_uso_demanda TEXT,
+        situacao_atual_demanda TEXT
     )
     """
     cursor.execute(tabela_demanda)

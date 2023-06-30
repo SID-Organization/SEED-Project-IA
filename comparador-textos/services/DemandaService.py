@@ -22,8 +22,8 @@ class DemandaService:
         conexao = self.obter_conexao()
         cursor = conexao.cursor()
 
-        sql = "INSERT INTO demanda (id_demanda, titulo, proposta_melhoria, descricao_qualitativo) VALUES (%s, %s, %s, %s)"
-        valores = (demanda.id_demanda, demanda.titulo, demanda.proposta_melhoria, demanda.descricao_qualitativo)
+        sql = "INSERT INTO demanda (id_demanda, titulo, proposta_melhoria, descricao_qualitativo, frequencia_uso_demanda, situacao_atual_demanda) VALUES (%s, %s, %s, %s, %s, %s)"
+        valores = (demanda.id_demanda, demanda.titulo, demanda.proposta_melhoria, demanda.descricao_qualitativo, demanda.frequencia_uso_demanda, demanda.situacao_atual_demanda)
 
         cursor.execute(sql, valores)
         conexao.commit()
@@ -44,9 +44,10 @@ class DemandaService:
         cursor.close()
         conexao.close()
 
+        print(resultado)
+
         if resultado:
-            id_demanda, titulo, proposta_melhoria, descricao_qualitativo = resultado
-            return Demanda(id_demanda, titulo, proposta_melhoria, descricao_qualitativo)
+            return Demanda(resultado[0], resultado[1], resultado[2], resultado[3], resultado[4], resultado[5])
         else:
             return None
 
@@ -75,3 +76,22 @@ class DemandaService:
 
         cursor.close()
         conexao.close()
+
+    def obter_todas_demandas(self):
+        conexao = self.obter_conexao()
+        cursor = conexao.cursor()
+
+        sql = "SELECT * FROM demanda"
+
+        cursor.execute(sql)
+        resultado = cursor.fetchall()
+
+        cursor.close()
+        conexao.close()
+
+        demandas = []
+
+        for item in resultado:
+            demandas.append(Demanda(item[0], item[1], item[2], item[3], item[4], item[5]))
+
+        return demandas
