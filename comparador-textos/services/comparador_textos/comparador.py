@@ -1,4 +1,5 @@
 import spacy
+from models.entities.Demandas_similares import DemandaSimilar
 
 nlp = spacy.load("pt_core_news_lg")
 
@@ -14,7 +15,10 @@ def encontrar_demandas_similares(demanda, demandas):
     for demanda_existente in demandas:
         similaridade = comparar_demandas(demanda, demanda_existente)
         if similaridade > 0.7:
-            demandas_similares.append(demanda_existente)
+            if demanda.id_demanda == demanda_existente.id_demanda:
+                continue
+            obj_demanda_similar = DemandaSimilar(demanda_existente, similaridade)
+            demandas_similares.append(obj_demanda_similar)
     return demandas_similares
 
 

@@ -15,26 +15,32 @@ class DemandaController:
         print("Dados recebidos: ", data)
         nova_demanda = Demanda(**data)
         print("Demanda criada: ", nova_demanda)
+        # Buscar uma demanda com o mesmo id para verificar se já existe
+        demanda = service.obter_demanda_por_id(nova_demanda.id_demanda)
+        if demanda is not None:
+            print("Demanda já existe!")
+            service.excluir_demanda(demanda.id_demanda)
         service.criar_demanda(nova_demanda)
         return jsonify(nova_demanda.to_dict())
 
     @staticmethod
-    def buscar_demandas_similares():
-        # Pegar o id da demanda do body
-        data = request.get_json()
+    def buscar_demandas_similares(demanda_id):
+        id_demanda = demanda_id
         service = DemandaService()
-        print(data)
-        demanda1 = service.obter_demanda_por_id(data['demanda1'])
-        demanda2 = service.obter_demanda_por_id(data['demanda2'])
-        similaridade = comparar_demandas(demanda1, demanda2)
-        if similaridade > 0.7:
-            print("Demanda similar encontrada", similaridade)
-            similaridade_string = str(similaridade)
-            return similaridade_string
-        else:
-            print("Demanda similar não encontrada")
-            similaridade_string = str(similaridade)
-            return similaridade_string
+        demanda = service.obter_demanda_por_id(id_demanda)
+        if demanda is None:
+            return jsonify({"message": "Demanda não encontrada!"})
+        demandas = service.obter_todas_demandas()
+        demandas_similares = encontrar_demandas_similares(demanda, demandas)
+
+        resultado = []
+        for demanda_similar in demandas_similares:
+            resultado.append({
+                "demanda": demanda_similar.demanda.to_dict(),
+                "similaridade": demanda_similar.similaridade
+            })
+
+        return jsonify(resultado)
 
     @staticmethod
     def listar_demandas():

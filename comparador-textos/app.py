@@ -29,10 +29,10 @@ def atualizar_demanda(demanda_id):
     return controller.atualizar_demanda(demanda_id)
 
 
-@app.route('/comparar-demandas', methods=['POST'])
-def comparar_demandas():
+@app.route('/demandas/similar/<int:demanda_id>', methods=['GET'])
+def comparar_demandas(demanda_id):
     controller = DemandaController()
-    return controller.buscar_demandas_similares()
+    return controller.buscar_demandas_similares(demanda_id)
 
 
 @app.route('/demandas/<int:demanda_id>', methods=['GET'])
