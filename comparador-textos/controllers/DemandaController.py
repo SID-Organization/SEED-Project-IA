@@ -9,21 +9,6 @@ class DemandaController:
         pass
 
     @staticmethod
-    def criar_demanda():
-        service = DemandaService()
-        data = request.get_json()
-        print("Dados recebidos: ", data)
-        nova_demanda = Demanda(**data)
-        print("Demanda criada: ", nova_demanda)
-        # Buscar uma demanda com o mesmo id para verificar se já existe
-        demanda = service.obter_demanda_por_id(nova_demanda.id_demanda)
-        if demanda is not None:
-            print("Demanda já existe!")
-            service.excluir_demanda(demanda.id_demanda)
-        service.criar_demanda(nova_demanda)
-        return jsonify(nova_demanda.to_dict())
-
-    @staticmethod
     def buscar_demandas_similares(demanda_id):
         id_demanda = demanda_id
         service = DemandaService()
@@ -54,22 +39,3 @@ class DemandaController:
         service = DemandaService()
         demanda = service.obter_demanda_por_id(id_demanda)
         return jsonify(demanda.to_dict())
-
-    @staticmethod
-    def atualizar_demanda(demanda_id):
-        id_demanda = demanda_id
-        service = DemandaService()
-        demanda_antiga = service.obter_demanda_por_id(id_demanda)
-        data = request.get_json()
-        demanda_atualizada = Demanda(**data)
-        demanda_atualizada.id_demanda = demanda_antiga.id_demanda
-        service.atualizar_demanda(demanda_atualizada)
-        return jsonify(demanda_atualizada.to_dict())
-
-    @staticmethod
-    def excluir_demanda(demanda_id):
-        id_demanda = demanda_id
-        service = DemandaService()
-        service.excluir_demanda(id_demanda)
-        print(id_demanda)
-        return jsonify({"message": "Demanda excluída com sucesso!"})
