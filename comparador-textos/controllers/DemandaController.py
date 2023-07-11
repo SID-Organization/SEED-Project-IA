@@ -20,6 +20,8 @@ class DemandaController:
 
         resultado = []
         for demanda_similar in demandas_similares:
+            # Deixar apenas 2 casas depois da vírgula
+            demanda_similar.similaridade = round(demanda_similar.similaridade, 2)
             resultado.append({
                 "demanda": demanda_similar.demanda.to_dict(),
                 "similaridade": demanda_similar.similaridade
