@@ -1,4 +1,8 @@
-Flask~=2.3.2
+Flask~=2.2.2
 mysqlclient~=2.2.0
 scikit-learn~=1.2.2
-spacy~=3.5.4
+spacy~=3.5.3
+pymysql~=1.0.2
+pandas~=1.5.3
+matplotlib~=3.7.1
+statsmodels~=0.13.5

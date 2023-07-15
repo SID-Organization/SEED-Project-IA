@@ -1,4 +1,4 @@
-import MySQLdb
+import pymysql
 
 from models.entities.Demanda import Demanda
 
@@ -11,7 +11,7 @@ class DemandaService:
         self.nome_banco = 'db_sid_sandbox2'
 
     def obter_conexao(self):
-        return MySQLdb.connect(
+        return pymysql.connect(
             host=self.host,
             user=self.usuario,
             passwd=self.senha,
@@ -34,7 +34,8 @@ class DemandaService:
         print(resultado)
 
         if resultado:
-            return Demanda(resultado[0], resultado[15], resultado[10], resultado[4], resultado[5], resultado[12])
+            return Demanda(resultado[0], resultado[15], resultado[10],
+                           resultado[4], resultado[5], resultado[12], resultado[3])
         else:
             return None
 
@@ -53,6 +54,6 @@ class DemandaService:
         demandas = []
 
         for item in resultado:
-            demandas.append(Demanda(item[0], item[15], item[10], item[4], item[5], item[12]))
+            demandas.append(Demanda(item[0], item[15], item[10], item[4], item[5], item[12], item[3]))
 
         return demandas

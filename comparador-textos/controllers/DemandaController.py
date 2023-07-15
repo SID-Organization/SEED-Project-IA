@@ -1,6 +1,7 @@
 from flask import request, jsonify
 from models.entities.Demanda import Demanda
 from services.comparador_textos.comparador import comparar_textos, encontrar_demandas_similares, comparar_demandas
+from services.previsor_demandas.previsor import prever_criacao_demanda
 from services.DemandaService import DemandaService
 
 
@@ -28,6 +29,13 @@ class DemandaController:
             })
 
         return jsonify(resultado)
+
+    @staticmethod
+    def prever_quantidade_demandas():
+        service = DemandaService()
+        demandas = service.obter_todas_demandas()
+        previsao = prever_criacao_demanda(demandas)
+        return jsonify(previsao)
 
     @staticmethod
     def listar_demandas():
