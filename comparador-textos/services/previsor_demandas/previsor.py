@@ -37,19 +37,20 @@ def prever_criacao_demanda(demandas_list):
     daily_count = df.resample('D').sum()
 
     # Ajustar o modelo ARIMA
-    model = ARIMA(daily_count, order=(1, 0, 0))
+    model = ARIMA(daily_count, order=(3, 1, 2))
     model_fit = model.fit()
 
     # Fazer previsões para os próximos 7 dias
-    forecast = model_fit.forecast(steps=6)
+    forecast = model_fit.forecast(steps=7)
 
     # Criar o objeto de previsão para os próximos dias
-    previsao_proximos_dias = data
-    for i in range(6):
-        data = forecast.index[i].strftime("%a, %d %b %Y %H:%M:%S GMT")
-        quantidade_demandas = int(forecast.values[i])
-        previsao_proximos_dias.append({"data": data, "quantidade_demandas": quantidade_demandas})
+    previsao_dias_futuros = []
+    for i in range(7):
+        data_prevista = forecast.index[i].strftime("%a, %d %b %Y %H:%M:%S GMT")
+        quantidade_demandas_previstas = int(forecast.values[i])
+        previsao_dias_futuros.append({"data": data_prevista, "quantidade_demandas": quantidade_demandas_previstas})
 
-    return previsao_proximos_dias
+    return previsao_dias_futuros
+
 
 
