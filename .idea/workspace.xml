@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86af25f7-3a1a-4757-8987-884748bc6523" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SID-Project-IA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SID-Project-IA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comparador-textos/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/comparador-textos/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comparador-textos/controllers/DemandaController.py" beforeDir="false" afterPath="$PROJECT_DIR$/comparador-textos/controllers/DemandaController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskProject/.idea/flaskProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskProject/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskProject/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskProject/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskProject1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskProject1/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-comparator/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-comparator/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-comparator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-comparator/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-comparator/.idea/text-comparator.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-comparator/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-comparator/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-comparator/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-ia/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text-ia/main.py" beforeDir="false" />
-    </list>
+    <list default="true" id="86af25f7-3a1a-4757-8987-884748bc6523" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +40,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/otavio_a_santos/Documents/GitHub/SID-Project-IA/comparador-textos",
+    "last_opened_file_path": "C:/Users/otavio_a_santos/Documents/GitHub/SID-Project-IA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688060424815</updated>
       <workItem from="1688060425809" duration="1631000" />
+      <workItem from="1689613349862" duration="872000" />
     </task>
     <servers />
   </component>
@@ -93,6 +71,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SID_Project_IA$app.coverage" NAME="app Coverage Results" MODIFIED="1688061608819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/comparador-textos" />
+    <SUITE FILE_PATH="coverage/SID_Project_IA$app.coverage" NAME="app Coverage Results" MODIFIED="1689614087163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/comparador-textos" />
   </component>
 </project>

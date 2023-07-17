@@ -14,7 +14,7 @@ def encontrar_demandas_similares(demanda, demandas):
     demandas_similares = []
     for demanda_existente in demandas:
         similaridade = comparar_demandas(demanda, demanda_existente)
-        if similaridade > 0.7:
+        if similaridade > 0.9:
             if demanda.id_demanda == demanda_existente.id_demanda:
                 continue
             obj_demanda_similar = DemandaSimilar(demanda_existente, similaridade)
