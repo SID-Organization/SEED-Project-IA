@@ -37,7 +37,7 @@ def prever_criacao_demanda(demandas_list):
     daily_count = df.resample('D').sum()
 
     # Ajustar o modelo ARIMA
-    model = ARIMA(daily_count, order=(3, 1, 2))
+    model = ARIMA(daily_count, order=(2, 1, 2))
     model_fit = model.fit()
 
     # Fazer previsões para os próximos 7 dias
