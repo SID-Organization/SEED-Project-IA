@@ -44,7 +44,7 @@ def prever_criacao_demanda(demandas_list):
     forecast = model_fit.forecast(steps=7)
 
     # Criar o objeto de previsão para os próximos dias
-    previsao_dias_futuros = data
+    previsao_dias_futuros = []
     for i in range(7):
         data_prevista = forecast.index[i].strftime("%a, %d %b %Y %H:%M:%S GMT")
         quantidade_demandas_previstas = int(forecast.values[i])
